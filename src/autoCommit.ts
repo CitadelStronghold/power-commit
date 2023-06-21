@@ -7,7 +7,7 @@ const SYNC_DELAY = 0;
 const AUTO_COMMIT_TEXT_START = 'Performing auto commit...';
 const AUTO_COMMIT_TEXT_DONE = 'Auto commit complete!';
 
-let currentlyAutoCommitting = false;
+let currentlyAutoCommitting: boolean = false;
 
 //-//
 

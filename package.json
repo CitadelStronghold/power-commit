@@ -1,9 +1,9 @@
 {
-  "name": "auto-commit-eshnek",
-  "displayName": "AutoCommit",
+  "name": "power-commit",
+  "displayName": "PowerCommit",
   "description": "Extension to quickly commit to Git",
-  "repository": "https://github.com/CitadelStronghold/autocommit",
-  "version": "1.0.5",
+  "repository": "https://github.com/CitadelStronghold/power-commit",
+  "version": "1.0.6",
   "publisher": "Eshnek",
   "icon": "assets/icon.png",
   "engines": {
@@ -17,8 +17,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "autocommit.autoCommit",
-        "title": "AutoCommit: Perform Auto Commit"
+        "command": "powercommit.powerCommit",
+        "title": "PowerCommit: Perform Auto Commit"
       }
     ]
   },

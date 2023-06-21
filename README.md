@@ -1,4 +1,4 @@
-# AutoCommit
+# Power Commit
 
 Introducing the ultimate productivity booster for developers and programmers: the Visual Studio Code Extension to quickly commit to Git!
 
@@ -8,11 +8,11 @@ This game-changing extension empowers you to submit changes instantly, shaving o
 
 Get ready to supercharge your development process and experience the exhilaration of rapid commits with this must-have extension!
 
-## [Installation](https://marketplace.visualstudio.com/items?itemName=Eshnek.auto-commit-eshnek&ssr=false)
+## [Installation](https://marketplace.visualstudio.com/items?itemName=Eshnek.power-commit&ssr=false)
 
 ## Usage
 
-Bind a keyboard shortcut to the `autocommit.autoCommit` command.
+Bind a keyboard shortcut to the `powercommit.powerCommit` command.
 
 Alternatively, manually activate the extension by searching for it in the context menu.
 

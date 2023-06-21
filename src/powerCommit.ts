@@ -4,59 +4,59 @@ import * as util from './util';
 //-//
 
 const SYNC_DELAY = 0;
-const AUTO_COMMIT_TEXT_START = 'Performing auto commit';
-const AUTO_COMMIT_TEXT_DONE = 'Auto commit complete!';
+const COMMIT_TEXT_START = 'Performing power commit';
+const COMMIT_TEXT_DONE = 'Power commit complete!';
 
-let currentlyAutoCommitting: boolean = false;
+let currentlyPowerCommitting: boolean = false;
 
 //-//
 
 export async function go(): Promise<void> {
-    const commit = new AutoCommit();
+    const commit = new PowerCommit();
 
     await commit.commit();
 }
 
 //-//
 
-class AutoCommit {
+class PowerCommit {
 
     private topLevel: string | null = null;
 
     public async commit(): Promise<void> {
-        if (currentlyAutoCommitting) {
+        if (currentlyPowerCommitting) {
             return;
         }
-        currentlyAutoCommitting = true;
+        currentlyPowerCommitting = true;
 
         await this.commit_();
 
-        currentlyAutoCommitting = false;
+        currentlyPowerCommitting = false;
     }
     private async commit_(): Promise<void> {
-        await AutoCommit.pushPending();
+        await PowerCommit.pushPending();
 
-        await this.performAutoCommit();
+        await this.performPowerCommit();
 
-        await AutoCommit.popPending();
+        await PowerCommit.popPending();
     }
 
     private static async pushPending(): Promise<void> {
-        util.inform(AUTO_COMMIT_TEXT_START);
+        util.inform(COMMIT_TEXT_START);
     }
     private static async popPending(): Promise<void> {
-        util.inform(AUTO_COMMIT_TEXT_DONE);
+        util.inform(COMMIT_TEXT_DONE);
     }
 
-    private async performAutoCommit(): Promise<void> {
+    private async performPowerCommit(): Promise<void> {
         try {
-            await this.performAutoCommit_();
+            await this.performPowerCommit_();
         } catch (e: any) {
             console.error(e);
             vscode.window.showErrorMessage(e.message);
         }
     }
-    private async performAutoCommit_(): Promise<void> {
+    private async performPowerCommit_(): Promise<void> {
         await this.storeTopLevel();
 
         await this.saveAll();
@@ -67,7 +67,7 @@ class AutoCommit {
         await this.syncAll();
     }
     private async storeTopLevel(): Promise<void> {
-        this.topLevel = await AutoCommit.findGitRoot();
+        this.topLevel = await PowerCommit.findGitRoot();
     }
 
     //-//
@@ -81,7 +81,7 @@ class AutoCommit {
     }
 
     private async performCommit(): Promise<void> {
-        const message = AutoCommit.generateCommitMessage();
+        const message = PowerCommit.generateCommitMessage();
 
         await util.system(`git commit -m "${message}"`, this.topLevel);
     }
@@ -102,11 +102,11 @@ class AutoCommit {
             return null;
         }
 
-        return await AutoCommit.findGitRoot_(doc);
+        return await PowerCommit.findGitRoot_(doc);
     }
     private static async findGitRoot_(doc: vscode.TextDocument): Promise<string | null> {
-        const currentFolder = AutoCommit.getCurrentFolder(doc);
-        const topLevel = await AutoCommit.getTopLevel(currentFolder);
+        const currentFolder = PowerCommit.getCurrentFolder(doc);
+        const topLevel = await PowerCommit.getTopLevel(currentFolder);
 
         return topLevel || null;
     }
@@ -114,7 +114,7 @@ class AutoCommit {
         const currentFilePath = doc.uri.fsPath.trim().replace(/\\/g, '/');
         const currentFolder = currentFilePath.substring(0, currentFilePath.lastIndexOf('/'));
 
-        AutoCommit.printFolder(currentFolder);
+        PowerCommit.printFolder(currentFolder);
 
         return currentFolder;
     }
@@ -122,7 +122,7 @@ class AutoCommit {
         const topLevelResult = await util.system('git rev-parse --show-toplevel', currentFolder);
         const topLevel = topLevelResult.trim();
 
-        AutoCommit.printTopLevel(topLevel);
+        PowerCommit.printTopLevel(topLevel);
 
         return topLevel;
     }
@@ -132,7 +132,7 @@ class AutoCommit {
     private static generateCommitMessage(): string {
         const now = new Date(Date.now());
 
-        const displayedMinutes = AutoCommit.getDisplayedMinutes(now);
+        const displayedMinutes = PowerCommit.getDisplayedMinutes(now);
 
         // 6/21/2023 04:00 +
         return `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()} ${now.getHours()}:${displayedMinutes} +`;

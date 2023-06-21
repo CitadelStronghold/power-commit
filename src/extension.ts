@@ -1,14 +1,14 @@
 import * as vscode from 'vscode';
-import * as autoCommit from './autoCommit';
+import * as powerCommit from './powerCommit';
 
 //-//
 
 export function activate(context: vscode.ExtensionContext) {
-    activateAutoCommitCommand(context);
+    activatePowerCommitCommand(context);
 }
 
 //-//
 
-function activateAutoCommitCommand(context: vscode.ExtensionContext) {
-    context.subscriptions.push(vscode.commands.registerCommand('autocommit.autoCommit', autoCommit.go));
+function activatePowerCommitCommand(context: vscode.ExtensionContext) {
+    context.subscriptions.push(vscode.commands.registerCommand('powercommit.powerCommit', powerCommit.go));
 }

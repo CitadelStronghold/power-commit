@@ -16,6 +16,10 @@ Bind a keyboard shortcut to the `autocommit.autoCommit` command.
 
 Alternatively, manually activate the extension by searching for it in the context menu.
 
+**Warning: Generally incompatible with team work, unless people are okay with timestamp commits.**
+
+**Warning: May have unintended consequences. Be sure to read below to understand exactly what the extension does.**
+
 ## Details
 
 When invoked, the extension will:

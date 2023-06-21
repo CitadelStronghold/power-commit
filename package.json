@@ -3,7 +3,7 @@
   "displayName": "AutoCommit",
   "description": "Extension to quickly commit to Git",
   "repository": "https://github.com/CitadelStronghold/autocommit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "Eshnek",
   "icon": "assets/icon.png",
   "engines": {

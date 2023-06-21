@@ -7,10 +7,10 @@ const describe = mocha.describe;
 
 suite('Extension Test Suite', () => {
     describe('util', () => {
-        test('util.system', () => {
-            const result = util.system("pwd");
+        test('util.system', async () => {
+            const result = await util.system("pwd");
 
-            console.error(result);
+            console.info(`pwd result is ${result}`);
 
             // assert.strictEqual(-1, [1, 2, 3].indexOf(5));
         });

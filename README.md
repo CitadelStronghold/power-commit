@@ -14,7 +14,7 @@ Bind a keyboard shortcut to the `autocommit.autoCommit` command.
 
 ## Details
 
-When pressed, the extension will:
+When invoked, the extension will:
 1. Report a notification to the user.
 1. Determine the root path of the currently selected editor.
 1. Save all files.

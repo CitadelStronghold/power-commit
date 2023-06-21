@@ -8,9 +8,11 @@ This game-changing extension empowers you to submit changes instantly, shaving o
 
 Get ready to supercharge your development process and experience the exhilaration of rapid commits with this must-have extension!
 
-## Details
+## Usage
 
 Bind a keyboard shortcut to the `autocommit.autoCommit` command.
+
+## Details
 
 When pressed, the extension will:
 1. Report a notification to the user

@@ -11,7 +11,7 @@ let currentlyAutoCommitting: boolean = false;
 
 //-//
 
-export async function go() {
+export async function go(): Promise<void> {
     const commit = new AutoCommit();
 
     await commit.commit();

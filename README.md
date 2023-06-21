@@ -1,4 +1,4 @@
-# autocommit
+# AutoCommit
 
 Introducing the ultimate productivity booster for developers and programmers: the Visual Studio Code Extension to quickly commit to Git!
 

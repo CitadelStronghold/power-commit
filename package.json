@@ -1,9 +1,9 @@
 {
   "name": "power-commit",
-  "displayName": "PowerCommit",
-  "description": "Extension to quickly commit to Git",
+  "displayName": "Power Commit",
+  "description": "Quickly commit to Git using an editor command.",
   "repository": "https://github.com/CitadelStronghold/power-commit",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "publisher": "Eshnek",
   "icon": "assets/icon.png",
   "engines": {

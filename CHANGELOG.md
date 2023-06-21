@@ -20,3 +20,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changes
 
 - Rename project from `auto-commit` to `power-commit`
+
+## [1.0.7] - 6/21/2023
+
+### Changes
+
+- Project display name has a space in it
+- Update extension description

@@ -2,7 +2,7 @@
   "name": "autocommit",
   "displayName": "autocommit",
   "description": "Extension to quickly commit to Git",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.79.0"
   },
@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "autocommit.helloWorld",
-        "title": "Hello World"
+        "command": "autocommit.autoCommit",
+        "title": "AutoCommit: Perform Auto Commit"
       }
     ]
   },

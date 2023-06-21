@@ -7,3 +7,19 @@ Say goodbye to the tedium of manual commits and embrace lightning-fast workflows
 This game-changing extension empowers you to submit changes instantly, shaving off countless precious seconds and boosting your efficiency like never before. With thousands of iterations, it's the secret weapon that transforms you into a speed demon of version control.
 
 Get ready to supercharge your development process and experience the exhilaration of rapid commits with this must-have extension!
+
+## Details
+
+Bind a keyboard shortcut to the `autocommit.autoCommit` command.
+
+When pressed, the extension will:
+1. Report a notification to the user
+1. Determine the root path of the currently selected editor
+1. Save all files
+1. Execute `git add .`, staging all files
+1. Execute `git commit -m "..."`, committing a timestamp message
+1. Execute `git pull`
+1. Execute `git push`
+1. Report a notification to the user
+
+The timestamp typically looks like this: `6/21/2023 14:28 +`

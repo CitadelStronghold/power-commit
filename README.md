@@ -12,6 +12,8 @@ Get ready to supercharge your development process and experience the exhilaratio
 
 Bind a keyboard shortcut to the `autocommit.autoCommit` command.
 
+Alternatively, manually activate the extension by searching for it in the context menu.
+
 ## Details
 
 When invoked, the extension will:

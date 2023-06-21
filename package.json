@@ -1,8 +1,11 @@
 {
-  "name": "autocommit",
-  "displayName": "autocommit",
+  "name": "auto-commit-eshnek",
+  "displayName": "AutoCommit",
   "description": "Extension to quickly commit to Git",
-  "version": "0.0.2",
+  "repository": "https://github.com/CitadelStronghold/autocommit",
+  "version": "1.0.0",
+  "publisher": "Eshnek",
+  "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.79.0"
   },

@@ -31,3 +31,5 @@ All commands are run in the determined editor root folder.
 Failures are reported to the user via notification.
 
 The timestamp typically looks like this: `6/21/2023 14:28 +`
+
+Nothing happens when there are no changes - Git simply rejects the commands.

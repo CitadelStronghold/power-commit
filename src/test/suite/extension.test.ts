@@ -1,6 +1,5 @@
 import * as assert from 'assert';
 import * as util from '../../util';
-import * as vscode from 'vscode';
 
 import * as mocha from 'mocha';
 const describe = mocha.describe;

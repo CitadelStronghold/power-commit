@@ -8,7 +8,7 @@ This game-changing extension empowers you to submit changes instantly, shaving o
 
 Get ready to supercharge your development process and experience the exhilaration of rapid commits with this must-have extension!
 
-## [Installation](https://marketplace.visualstudio.com/items?itemName=Eshnek.power-commit&ssr=false)
+## [Extension Home Page](https://marketplace.visualstudio.com/items?itemName=Eshnek.power-commit&ssr=false)
 
 ## Usage
 

@@ -33,3 +33,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changes
 
 - Reporting now occurs in the status bar, as opposed to using a notification. This is less invasive.
+
+## [1.1.1] - 6/26/2023
+
+### Fixed
+
+- Error reporting bug causing functionality to break

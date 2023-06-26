@@ -23,14 +23,14 @@ Alternatively, manually activate the extension by searching for it in the contex
 ## Details
 
 When invoked, the extension will:
-1. Report a notification to the user.
+1. Report a notification to the user via the status bar.
 1. Determine the root path of the currently selected editor.
 1. Save all files.
 1. Execute `git add .`, staging all files.
 1. Execute `git commit -m "..."`, committing a timestamp message.
 1. Execute `git pull`
 1. Execute `git push`
-1. Report a notification to the user.
+1. Report a notification to the user via the status bar.
 
 All commands are run in the determined editor root folder.
 

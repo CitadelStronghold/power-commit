@@ -8,7 +8,9 @@ const STATUS_TIMEOUT: number = 5000;
 
 const DEFAULT_REPORTER: (text: string) => void = (text: string) => {
     console.error(text);
-    throw new Error(text);
+
+    // We get a non-zero exit code in certain valid cases.
+    // throw new Error(text);
 };
 
 //-//

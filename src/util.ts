@@ -4,24 +4,39 @@ const exec = require('child_process').exec;
 
 //-//
 
-export async function system(command: string, cwd: string | null = null): Promise<string> {
+const STATUS_TIMEOUT: number = 5000;
+
+const DEFAULT_REPORTER: (text: string) => void = (text: string) => {
+    console.error(text);
+    throw new Error(text);
+};
+
+//-//
+
+let statusBar: vscode.StatusBarItem | null = null;
+let statusTimeout: any | null = null;
+
+//-//
+
+export async function system(
+    command: string,
+    cwd: string | null = null,
+    reporter: (text: string) => void = DEFAULT_REPORTER
+): Promise<string> {
     if (cwd === null) {
         if ((cwd = getCWD()) === null) {
             return '';
         }
     }
 
-    return new Promise(resolve => {
-        exec(command, { cwd }, makeCommandResolver(resolve));
+    return new Promise((resolve) => {
+        exec(command, { cwd }, makeCommandResolver(resolve, reporter));
     });
 }
-function makeCommandResolver(resolve: any) {
+function makeCommandResolver(resolve: any, reporter: (text: string) => void): any {
     return (error: string, stdout: string, stderr: string) => {
-        if (error) {
-            console.error(error);
-        }
-        if (stderr) {
-            console.error(stderr);
+        if (error || stderr) {
+            reporter(error || stderr);
         }
 
         resolve(stdout);
@@ -41,11 +56,35 @@ export async function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function inform(text: string): Promise<void> {
-    console.log(text);
+export function inform(text: string): void {
+    console.info(text);
 
-    await vscode.window.showInformationMessage(text);
+    showStatus(text);
 }
+function showStatus(text: string): void {
+    if(statusBar === null) {
+        createStatusBar();
+    }
+
+    statusBar!.text = text;
+    statusBar!.show();
+
+    startStatusTimer();
+}
+function createStatusBar(): void {
+    statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 1000);
+}
+function startStatusTimer(): void {
+    if (statusTimeout !== null) {
+        clearTimeout(statusTimeout);
+    }
+
+    statusTimeout = setTimeout(() => {
+        statusBar!.text = '';
+        statusBar!.hide();
+    }, STATUS_TIMEOUT);
+}
+
 
 //-//
 

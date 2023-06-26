@@ -27,3 +27,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Project display name has a space in it
 - Update extension description
+
+## [1.1.0] - 6/26/2023
+
+### Changes
+
+- Reporting now occurs in the status bar, as opposed to using a notification. This is less invasive.

@@ -4,7 +4,7 @@ import * as util from './util';
 //-//
 
 const SYNC_DELAY = 0;
-const COMMIT_TEXT_START = 'Performing power commit';
+const COMMIT_TEXT_START = 'Performing power commit...';
 const COMMIT_TEXT_DONE = 'Power commit complete!';
 
 let currentlyPowerCommitting: boolean = false;

@@ -39,3 +39,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Fixed
 
 - Error reporting bug causing functionality to break
+
+## [1.1.2] - 6/27/2023
+
+### Changes
+
+- Added startup activation event

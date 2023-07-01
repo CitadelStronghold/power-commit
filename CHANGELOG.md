@@ -45,3 +45,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changes
 
 - Added startup activation event
+
+## [1.2.0] - 6/30/2023
+
+- Added a new icon

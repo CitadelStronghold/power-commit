@@ -3,7 +3,7 @@
   "displayName": "Power Commit",
   "description": "Quickly commit to Git using an editor command.",
   "repository": "https://github.com/CitadelStronghold/power-commit",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "publisher": "Eshnek",
   "icon": "assets/icon.png",
   "engines": {
